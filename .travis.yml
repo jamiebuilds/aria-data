@@ -14,6 +14,10 @@ jobs:
     - stage: maybe-deploy
       if: branch = master AND env(TRAVIS_EVENT_TYPE) = cron
       script:
+        - printf "//registry.npmjs.org/:_authToken=${ARIA_DATA_UPDATER_NPM_TOKEN}" >> ~/.npmrc
         - yarn build
         - yarn deploy
         - git push origin master --follow-tags
+env:
+  global:
+    secure: P8eoOrhubIX+rTppyZK0vGOR6qvLxuSBiq2HrgY3NoFVdUMMOZHbcxK9mtHnjOj4MZF3GSo7waRBgpG9v42XX5DeuQrIik1NDPYfRFtrj+ej4NL0j6u433/SAkKU22jQrWK3ByVxbpPZPVFbF7edH+N2THkNprreP3tOndNdYon/wUhlNwqQ3Jh7c48i5PJEq5Tcs9QF4xVmpHLS0uSSFzQ/sZH7oVodyAskyFgk69T95FhIP45218Wco6Mfved+wPAw5RafqmaK3BVrk9V0/q4CNx/RQuCmp8edudChCVXu9ItzPxhIQZSo77rhNTvJfmAh8lYWULTxc/KjVmo2a0Mmj7+Zg+aIxA2fC75bqi/D0bkGqPPpJcg67PiF7vxIh2OFSpjtKc7NbeTvVVfIchQJ+Psnmam6OY+GydF4g6EyFg29WVppJoSQWsCZ9OF0ndYxa2k9BqDUmE/JM24q0d2qSQLnD/GmNLgPExX9oJ5UuOVNpZ3KT8gHr7HXJIiy1Jqywhhfw6zsC25yxneN8L0DCK8FVrGnuatUKXMyY8R45HqhR1UB/+6AAlzL2R83cdtqny48oR2X7xybHfb1ng5l/h5llYK1zOMSqS5iA6QpxkL2ETbmGb6l2ewCkCC7vODr0bFjhD3pNU3WiSlfndo/wKfQngSGh1UwpDSiwjo=
