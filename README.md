@@ -100,4 +100,4 @@ let alertAttrs = getAttrs(alert);
 // ['aria-atomic', 'aria-busy', ...]
 ```
 
-test6
+test7
