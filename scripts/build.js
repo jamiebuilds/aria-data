@@ -47,7 +47,7 @@ async function main() {
   }
 
   console.log(chalk`{dim [1/6]} {magenta Launching headless browser...}`);
-  let browser = await puppeteer.launch();
+  let browser = await puppeteer.launch({ args: ['--no-sandbox'] });
   let page = await browser.newPage();
 
   // setup console forwarding:
