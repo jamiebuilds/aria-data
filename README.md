@@ -99,3 +99,5 @@ let alertAttrs = getAttrs(alert);
 // ['aria-expanded', 'aria-atomic', 'aria-busy', 'aria-controls', ...]
 // ['aria-atomic', 'aria-busy', ...]
 ```
+
+test
