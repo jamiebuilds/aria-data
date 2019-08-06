@@ -180,7 +180,7 @@ async function main() {
       attributes[name].values = $values.map($value => {
         let value = $value.querySelector('.value-name').textContent;
         return {
-          value: value.replace(/ \(default\)$/, ''),
+          value: value.replace(/ \(default\):?$/, ''),
           isDefault: value.includes('(default)'),
           description: $value.querySelector('.value-description').textContent,
         };
